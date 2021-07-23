@@ -1,10 +1,9 @@
 import * as Utils from './utils'
 
-const content = document.querySelector("#content");
+const content = document.querySelector(".main");
 
 function loadHome() {
-    const newP = Utils.createP("BLA", ["class1", "class2"])
-    content.appendChild(newP);
+    Utils.switchActivatedLinkTo("Home");
 }
 
 export default loadHome;

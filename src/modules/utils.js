@@ -14,19 +14,29 @@ function createH1(text, classList = []) {
 }
 
 
-function createBtn(text, classList = []) {
+function createBtn(text, funct, classList = []) {
     const element = document.createElement('button');
     _addClasses(element, classList);
     element.textContent = text;
+    element.addEventListener("click", funct);
     return element;
 }
 
 
-function createLink(text, url, classList = []) {
+function createLink(text, funct, id, classList = []) {
     const element = document.createElement('a');
     _addClasses(element, classList);
     element.textContent = text;
-    element.href = url;
+    element.id = id;
+    element.addEventListener("click", funct);
+    return element;
+}
+
+function createLinkHref(text, href, classList = []) {
+    const element = document.createElement('a');
+    _addClasses(element, classList);
+    element.textContent = text;
+    element.href = href;
     return element;
 }
 
@@ -39,6 +49,17 @@ function createImg(src, alt = "image", classList = []) {
     return element;
 }
 
+function switchActivatedLinkTo(linkId) {
+    const allLinks = document.querySelectorAll(".link");
+    for (let link of allLinks) {
+        if (link.id === linkId) {
+            link.classList.add("activated");
+        } else {
+            link.classList.remove("activated");
+        }
+    }
+}
+
 
 function _addClasses(element, classList) {
     if (classList.length > 0) {
@@ -48,4 +69,4 @@ function _addClasses(element, classList) {
     }
 }
 
-export { createP, createImg, createH1, createBtn, createLink };
+export { createP, createImg, createH1, createBtn, createLink, createLinkHref, switchActivatedLinkTo };

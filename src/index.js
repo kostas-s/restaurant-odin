@@ -1,3 +1,4 @@
-import loadHome from './modules/home'
+import './style.scss';
+import initializePage from './modules/initialize';
 
-loadHome();
+initializePage();

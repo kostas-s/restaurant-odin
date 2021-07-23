@@ -1,0 +1,72 @@
+$colorHeader: #57837B;
+$colorSection: #F1ECC3;
+$colorFooter: #515E63;
+$fontMain: 'Raleway', sans-serif;
+$fontBrand: 'Zen Loop', cursive;
+
+body, p, a {
+    padding: 0;
+    margin: 0;
+    font-family: $fontMain;
+}
+
+header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    background-color: $colorHeader;
+    .brand {
+        font-family: $fontBrand;
+        font-size: 80px;
+        margin-left: 1rem;
+    }
+
+    .links {
+        margin-right: 1rem;
+    .link {
+        box-sizing: border-box;
+        transition-duration: 0.2s;
+        margin-left: 2rem;
+        font-size: 30px;
+        font-weight:200;
+        cursor:pointer;
+        }
+        .link:hover:not(.activated) {
+            color:$colorSection;
+            margin-left: 5rem;
+        }
+        .activated {
+            font-weight: 500;
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 500px;
+    background-color: $colorSection;
+}
+
+footer {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.2em;
+    padding-left: 1rem;
+    width: 100%;
+    height: 70px;
+    background-color: $colorFooter;
+    a {
+        font-weight:600;
+        margin-left: 0.5rem;
+        text-decoration: none;
+        transition-duration: 0.2s;
+        color: black;
+    }
+    a:hover {
+        color: $colorSection;
+    }
+}
+
