@@ -18,7 +18,13 @@
   },
   "homepage": "https://github.com/kostas-s/restaurant-odin#readme",
   "devDependencies": {
+    "@squoosh/lib": "^0.4.0",
     "css-loader": "^6.2.0",
+    "image-minimizer-webpack-plugin": "^2.2.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",

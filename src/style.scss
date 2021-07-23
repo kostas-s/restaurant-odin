@@ -1,10 +1,26 @@
 $colorHeader: #57837B;
 $colorSection: #F1ECC3;
 $colorFooter: #515E63;
+$colorImgBg1: #A35709;
 $fontMain: 'Raleway', sans-serif;
 $fontBrand: 'Zen Loop', cursive;
+$mainMarginLeft: 8%;
+$mainMarginLeftOut: 9%;
+$mainMarginLeftIn: 7%;
 
-body, p, a {
+@keyframes fade-in {
+    from {opacity: 0;
+    margin-left:$mainMarginLeftIn;}
+    to {opacity: 1; margin-left: $mainMarginLeft;
+    }
+}
+
+@keyframes fade-out {
+    0% {opacity: 1; margin-left: $mainMarginLeft}
+    100% {opacity: 0; margin-left: $mainMarginLeftOut}
+}
+
+body, p, a, h1 {
     padding: 0;
     margin: 0;
     font-family: $fontMain;
@@ -44,9 +60,65 @@ header {
 }
 
 section {
-    width: 100%;
-    height: 500px;
+
+    width: 100vw;
+    min-height: 500px;
+    padding: 5em 0 ;
     background-color: $colorSection;
+
+    .para-title {
+        margin-bottom:0.5em;
+        font-size: 1.7em;
+        font-weight: 600;
+    }
+    .main-content {
+        margin-left: $mainMarginLeft;
+        margin-right: $mainMarginLeft;
+        gap: 5em 1em;
+        display:grid;
+        grid-template-areas: "tl tr" 
+        "ml mr"
+        "bot bot";
+        font-size: 1.5em;
+    }
+    .top-left-col {
+
+        grid-area: tl;
+    }
+    .mid-left-col {
+
+        grid-area: ml;
+    }
+    .top-right-col {
+
+        grid-area: tr;
+    }
+    .mid-right-col {
+
+        grid-area: mr;
+    }
+    .bot-col {
+        font-size: 1.2em;
+        grid-area: bot;
+        text-align: center;
+    }
+    .fade-in {
+        animation: fade-in 0.4s ease-in-out;
+    }
+    .fade-out {
+        animation: fade-out 0.4s ease-in-out;
+    }
+    .image1 {
+        border-radius: 10% 5% 10% 20%;
+        max-width: 500px !important;
+        transform:rotateZ(-2deg);
+    }
+    .image2 {
+        border-radius: 10% 5% 10% 20%;
+        max-width: 550px !important;
+        transform: rotateZ(6deg);
+    }
+
 }
 
 footer {
@@ -54,10 +126,12 @@ footer {
     align-items: center;
     justify-content: flex-start;
     font-size: 1.2em;
-    padding-left: 1rem;
     width: 100%;
     height: 70px;
     background-color: $colorFooter;
+    p {
+        padding-left: 1rem;
+    }
     a {
         font-weight:600;
         margin-left: 0.5rem;

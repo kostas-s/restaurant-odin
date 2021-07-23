@@ -24,13 +24,14 @@ function initializePage() {
 
         header.appendChild(links);
         content.appendChild(header);
-
-        Utils.switchActivatedLinkTo("Home");
     })();
 
     (function createMain() {
-        const main = document.createElement("section");
-        content.appendChild(main);
+        const section = document.createElement("section");
+        const mainContent = document.createElement("div");
+        mainContent.classList.add("main-content");
+        section.appendChild(mainContent)
+        content.appendChild(section);
     })();
 
     (function createFooter() {
@@ -43,6 +44,7 @@ function initializePage() {
 
         content.appendChild(footer);
     })();
+    loadHome();
 }
 
 export default initializePage;

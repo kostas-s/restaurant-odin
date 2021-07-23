@@ -61,6 +61,12 @@ function switchActivatedLinkTo(linkId) {
 }
 
 
+function isActivatedLink(linkId) {
+    const link = document.querySelector(`#${linkId}`);
+    return link.classList.contains("activated");
+}
+
+
 function _addClasses(element, classList) {
     if (classList.length > 0) {
         for (let c of classList) {
@@ -69,4 +75,4 @@ function _addClasses(element, classList) {
     }
 }
 
-export { createP, createImg, createH1, createBtn, createLink, createLinkHref, switchActivatedLinkTo };
+export { createP, createImg, createH1, createBtn, createLink, createLinkHref, switchActivatedLinkTo, isActivatedLink };
