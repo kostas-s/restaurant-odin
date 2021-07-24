@@ -6,11 +6,12 @@ import eggsImg from '../assets/eggsmin.png'
 function loadHome() {
     if (Utils.isActivatedLink("Home")) return;
     const mainContent = document.querySelector(".main-content");
+    mainContent.classList.remove("fade-in");
     mainContent.classList.add("fade-out");
     Utils.switchActivatedLinkTo("Home");
     setTimeout(() => {
         mainContent.innerHTML = ""
-        mainContent.classList.remove("fade-out");
+        mainContent.classList.remove("fade-out", "contact", "menu");
 
         const tlCol = _buildTopLeftColumn();
         const trCol = _buildTopRightColumn();

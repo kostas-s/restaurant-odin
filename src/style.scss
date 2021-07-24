@@ -2,6 +2,7 @@ $colorHeader: #57837B;
 $colorSection: #F1ECC3;
 $colorFooter: #515E63;
 $colorImgBg1: #A35709;
+$colorMenuBg: #FFF5DA;
 $fontMain: 'Raleway', sans-serif;
 $fontBrand: 'Zen Loop', cursive;
 $mainMarginLeft: 8%;
@@ -123,11 +124,16 @@ section {
 
 
     }
+    position: relative;
+    flex-direction: column;
+    display:flex;
+    align-items: center;
     width: 100%;
     min-height: 500px;
     padding: 5em 0 ;
     background-color: $colorSection;
     .hidden-menu {
+        width: 100%;
         display: none;
         z-index: 1;
         position: relative;
@@ -163,6 +169,22 @@ section {
         font-size: 1.7em;
         font-weight: 600;
     }
+    .menu-line {
+        display:flex;
+        justify-content: space-between;
+    }
+    .menu-img {
+        width: 50%;
+        border-radius: 20px;
+
+    }
+
+    .menu-title {
+        font-size:1.2em;
+
+        width: 50%;
+        align-self: center;
+    }
     .main-content {
         margin-left: $mainMarginLeft;
         margin-right: $mainMarginLeft;
@@ -172,6 +194,18 @@ section {
         "ml mr"
         "bot bot";
         font-size: 1.5em;
+    }
+    .main-content.menu{
+        max-width: 1200px;
+        margin-left: $mainMarginLeft;
+        margin-right: $mainMarginLeft;
+        display: flex;
+        padding: 1em;
+        border:1px solid grey;
+        border-radius: 15px;
+        flex-direction: column;
+        font-size: 1.5em;
+        background-color: $colorMenuBg;
     }
     .top-left-col {
 
