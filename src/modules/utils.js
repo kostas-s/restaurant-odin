@@ -5,14 +5,12 @@ function createP(text, classList = []) {
     return element;
 }
 
-
 function createH1(text, classList = []) {
     const element = document.createElement('h1');
     _addClasses(element, classList);
     element.textContent = text;
     return element;
 }
-
 
 function createBtn(text, funct, classList = []) {
     const element = document.createElement('button');
@@ -21,7 +19,6 @@ function createBtn(text, funct, classList = []) {
     element.addEventListener("click", funct);
     return element;
 }
-
 
 function createLink(text, funct, id, classList = []) {
     const element = document.createElement('a');
@@ -39,7 +36,6 @@ function createLinkHref(text, href, classList = []) {
     element.href = href;
     return element;
 }
-
 
 function createImg(src, alt = "image", classList = []) {
     const element = document.createElement('img');
@@ -60,12 +56,24 @@ function switchActivatedLinkTo(linkId) {
     }
 }
 
-
 function isActivatedLink(linkId) {
     const link = document.querySelector(`#${linkId}`);
     return link.classList.contains("activated");
 }
 
+function startFadeOut(element) {
+    element.classList.remove("fade-in");
+    element.classList.add("fade-out");
+}
+
+function startFadeIn(element) {
+    element.classList.remove("fade-out")
+    element.classList.add("fade-in");
+}
+
+function elementClassListCleanup(element) {
+    element.classList.remove("menu", "contact", "fade-in");
+}
 
 function _addClasses(element, classList) {
     if (classList.length > 0) {
@@ -75,4 +83,4 @@ function _addClasses(element, classList) {
     }
 }
 
-export { createP, createImg, createH1, createBtn, createLink, createLinkHref, switchActivatedLinkTo, isActivatedLink };
+export { createP, createImg, createH1, createBtn, createLink, createLinkHref, switchActivatedLinkTo, isActivatedLink, startFadeOut, startFadeIn, elementClassListCleanup };
