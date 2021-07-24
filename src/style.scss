@@ -27,6 +27,15 @@ body, p, a, h1 {
 }
 
 header {
+    @media only screen and (max-width: 800px) {
+        height: 100px !important;
+        .brand {
+            font-size: 58px !important;
+        }
+        .links {
+            visibility: hidden !important;
+        }
+    }
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -40,6 +49,7 @@ header {
     }
 
     .links {
+        visibility: visible;
         margin-right: 1rem;
     .link {
         box-sizing: border-box;
@@ -60,8 +70,21 @@ header {
 }
 
 section {
-
-    width: 100vw;
+    @media only screen and (max-width: 1200px) {
+        .image1 {
+        max-width: 100% !important;
+    }
+    .image2 {
+        max-width: 100% !important;
+    }
+}
+    @media only screen and (max-width: 800px) {
+        .main-content {
+            display:flex !important;
+            flex-direction: column !important;
+        }
+    }
+    width: 100%;
     min-height: 500px;
     padding: 5em 0 ;
     background-color: $colorSection;
@@ -110,16 +133,18 @@ section {
     }
     .image1 {
         border-radius: 10% 5% 10% 20%;
-        max-width: 500px !important;
+        max-width: 500px;
         transform:rotateZ(-2deg);
     }
     .image2 {
         border-radius: 10% 5% 10% 20%;
-        max-width: 550px !important;
+        max-width: 550px;
         transform: rotateZ(6deg);
     }
 
 }
+
+
 
 footer {
     display:flex;
