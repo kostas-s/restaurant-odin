@@ -1,5 +1,5 @@
 # Brunchery restaurant page
-A Restaurant webpage for Webpack, npm, JS practice
+A mock Restaurant page, built as a fast static SPA.
 
 ## Features
 * A Frontend Single Page App
